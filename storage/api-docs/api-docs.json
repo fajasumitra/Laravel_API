@@ -1,0 +1,77 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel Documetation",
+        "description": "L5 Swagger OpenApi description",
+        "contact": {
+            "email": "darius@matulionis.lt"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/mahasiswa": {
+            "get": {
+                "tags": [
+                    "mahasiswa"
+                ],
+                "summary": "display all mahasiswa",
+                "description": "menampilkan seluruh mahasiswa",
+                "operationId": "index",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "mahasiswa"
+                ],
+                "summary": "Create mahaasiswa",
+                "description": "Create mahaasiswa",
+                "operationId": "create",
+                "requestBody": {
+                    "description": "Create user object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "nama": {
+                                        "type": "string",
+                                        "example": "faja"
+                                    },
+                                    "nim": {
+                                        "type": "integer",
+                                        "example": "2007660"
+                                    },
+                                    "jurusan": {
+                                        "type": "string",
+                                        "example": "RPL"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    }
+}
