@@ -203,13 +203,43 @@ paths:
                           type: string
                           example: '2023-03-06T09:31:53.000000Z'
       tags:
-        - Endpoints
+        - Mahasiswa
       security: []
     post:
       summary: ''
       operationId: postApiMahasiswa
       description: ''
       parameters:
+        -
+          in: query
+          name: nama
+          description: 'Nama Mahasiswa'
+          example: ut
+          required: true
+          schema:
+            type: string
+            description: 'Nama Mahasiswa'
+            example: ut
+        -
+          in: query
+          name: nim
+          description: 'NIM Mahasiswa'
+          example: 7
+          required: true
+          schema:
+            type: integer
+            description: 'NIM Mahasiswa'
+            example: 7
+        -
+          in: query
+          name: jurusan
+          description: 'Jurusan Mahasiswa'
+          example: qui
+          required: true
+          schema:
+            type: string
+            description: 'Jurusan Mahasiswa'
+            example: qui
         -
           in: header
           name: Content-Type
@@ -226,12 +256,12 @@ paths:
             type: string
       responses: {  }
       tags:
-        - Endpoints
+        - Mahasiswa
       security: []
   '/api/mahasiswa/{id}':
     get:
-      summary: 'Display the specified resource.'
-      operationId: displayTheSpecifiedResource
+      summary: ''
+      operationId: getApiMahasiswaId
       description: ''
       parameters:
         -
@@ -310,11 +340,11 @@ paths:
                           type: string
                           example: '2023-03-06T09:31:53.000000Z'
       tags:
-        - Endpoints
+        - Mahasiswa
       security: []
     post:
-      summary: 'Update the specified resource in storage.'
-      operationId: updateTheSpecifiedResourceInStorage
+      summary: ''
+      operationId: postApiMahasiswaId
       description: ''
       parameters:
         -
@@ -333,13 +363,13 @@ paths:
             type: string
       responses: {  }
       tags:
-        - Endpoints
+        - Mahasiswa
       security: []
     parameters:
       -
         in: path
         name: id
-        description: 'The ID of the mahasiswa.'
+        description: 'ID Mahasiswa .'
         example: 2
         required: true
         schema:
@@ -347,4 +377,7 @@ paths:
 tags:
   -
     name: Endpoints
+    description: ''
+  -
+    name: Mahasiswa
     description: ''

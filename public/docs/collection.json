@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "2c3cffa2-4339-4752-b0af-798a9e801759",
+        "_postman_id": "869c4612-6e1b-4ebb-8eb5-8b51398a9228",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -162,7 +162,13 @@
                             "name": ""
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "name": "Mahasiswa",
+            "description": "",
+            "item": [
                 {
                     "name": "GET api\/mahasiswa",
                     "request": {
@@ -220,7 +226,7 @@
                     ]
                 },
                 {
-                    "name": "Display the specified resource.",
+                    "name": "GET api\/mahasiswa\/{id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -232,7 +238,7 @@
                                     "id": "id",
                                     "key": "id",
                                     "value": "2",
-                                    "description": "The ID of the mahasiswa."
+                                    "description": "ID Mahasiswa ."
                                 }
                             ]
                         },
@@ -289,8 +295,27 @@
                         "url": {
                             "host": "{{baseUrl}}",
                             "path": "api\/mahasiswa",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/mahasiswa"
+                            "query": [
+                                {
+                                    "key": "nama",
+                                    "value": "ut",
+                                    "description": "Nama Mahasiswa",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "nim",
+                                    "value": "7",
+                                    "description": "NIM Mahasiswa",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "jurusan",
+                                    "value": "qui",
+                                    "description": "Jurusan Mahasiswa",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/mahasiswa?nama=ut&nim=7&jurusan=qui"
                         },
                         "method": "POST",
                         "header": [
@@ -312,7 +337,7 @@
                     "response": []
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "POST api\/mahasiswa\/{id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -323,8 +348,8 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
-                                    "description": "The ID of the mahasiswa."
+                                    "value": "1",
+                                    "description": "ID Mahasiswa"
                                 }
                             ]
                         },

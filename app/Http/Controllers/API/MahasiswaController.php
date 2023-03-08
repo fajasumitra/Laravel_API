@@ -7,14 +7,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
 use Exception;
-use OpenApi\Annotations as OA;
 
 class MahasiswaController extends Controller
 {
 
     /**
-        * display listing of users
-        
+    * @group Mahasiswa
     */
     public function index()
     {
@@ -28,7 +26,10 @@ class MahasiswaController extends Controller
     }
 
     /**
-     * 
+     * @group Mahasiswa
+     * @queryParam nama string required Nama Mahasiswa
+     * @queryParam nim int required NIM Mahasiswa
+     * @queryParam jurusan string required Jurusan Mahasiswa
      */
     public function store(Request $request)
     {
@@ -60,7 +61,8 @@ class MahasiswaController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * @group Mahasiswa
+     * @urlParam id int required ID Mahasiswa . Example: 2
      */
     public function show(string $id)
     {
@@ -83,7 +85,8 @@ class MahasiswaController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * @group Mahasiswa
+     * @urlParam id int required ID Mahasiswa
      */
     public function update(Request $request, string $id)
     {

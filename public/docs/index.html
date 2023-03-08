@@ -80,17 +80,24 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-mahasiswa">
-                                <a href="#endpoints-GETapi-mahasiswa">GET api/mahasiswa</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-mahasiswa" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="mahasiswa">
+                    <a href="#mahasiswa">Mahasiswa</a>
+                </li>
+                                    <ul id="tocify-subheader-mahasiswa" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="mahasiswa-GETapi-mahasiswa">
+                                <a href="#mahasiswa-GETapi-mahasiswa">GET api/mahasiswa</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-mahasiswa--id-">
-                                <a href="#endpoints-GETapi-mahasiswa--id-">Display the specified resource.</a>
+                                                                                <li class="tocify-item level-2" data-unique="mahasiswa-GETapi-mahasiswa--id-">
+                                <a href="#mahasiswa-GETapi-mahasiswa--id-">GET api/mahasiswa/{id}</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-mahasiswa">
-                                <a href="#endpoints-POSTapi-mahasiswa">POST api/mahasiswa</a>
+                                                                                <li class="tocify-item level-2" data-unique="mahasiswa-POSTapi-mahasiswa">
+                                <a href="#mahasiswa-POSTapi-mahasiswa">POST api/mahasiswa</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-mahasiswa--id-">
-                                <a href="#endpoints-POSTapi-mahasiswa--id-">Update the specified resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="mahasiswa-POSTapi-mahasiswa--id-">
+                                <a href="#mahasiswa-POSTapi-mahasiswa--id-">POST api/mahasiswa/{id}</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -103,7 +110,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: March 6, 2023</li>
+        <li>Last updated: March 8, 2023</li>
     </ul>
 </div>
 
@@ -621,7 +628,11 @@ access-control-allow-origin: *
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-mahasiswa">GET api/mahasiswa</h2>
+                <h1 id="mahasiswa">Mahasiswa</h1>
+
+    
+
+                                <h2 id="mahasiswa-GETapi-mahasiswa">GET api/mahasiswa</h2>
 
 <p>
 </p>
@@ -760,7 +771,7 @@ access-control-allow-origin: *
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-mahasiswa--id-">Display the specified resource.</h2>
+                    <h2 id="mahasiswa-GETapi-mahasiswa--id-">GET api/mahasiswa/{id}</h2>
 
 <p>
 </p>
@@ -898,11 +909,11 @@ access-control-allow-origin: *
                value="2"
                data-component="url">
     <br>
-<p>The ID of the mahasiswa. Example: <code>2</code></p>
+<p>ID Mahasiswa . Example: <code>2</code></p>
             </div>
                     </form>
 
-                    <h2 id="endpoints-POSTapi-mahasiswa">POST api/mahasiswa</h2>
+                    <h2 id="mahasiswa-POSTapi-mahasiswa">POST api/mahasiswa</h2>
 
 <p>
 </p>
@@ -915,7 +926,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/mahasiswa" \
+    "http://localhost/api/mahasiswa?nama=ut&amp;nim=7&amp;jurusan=qui" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -924,6 +935,14 @@ access-control-allow-origin: *
     <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/mahasiswa"
 );
+
+const params = {
+    "nama": "ut",
+    "nim": "7",
+    "jurusan": "qui",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Content-Type": "application/json",
@@ -1000,9 +1019,43 @@ fetch(url, {
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>nama</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="nama"                data-endpoint="POSTapi-mahasiswa"
+               value="ut"
+               data-component="query">
+    <br>
+<p>Nama Mahasiswa Example: <code>ut</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>nim</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="nim"                data-endpoint="POSTapi-mahasiswa"
+               value="7"
+               data-component="query">
+    <br>
+<p>NIM Mahasiswa Example: <code>7</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>jurusan</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="jurusan"                data-endpoint="POSTapi-mahasiswa"
+               value="qui"
+               data-component="query">
+    <br>
+<p>Jurusan Mahasiswa Example: <code>qui</code></p>
+            </div>
+                </form>
 
-                    <h2 id="endpoints-POSTapi-mahasiswa--id-">Update the specified resource in storage.</h2>
+                    <h2 id="mahasiswa-POSTapi-mahasiswa--id-">POST api/mahasiswa/{id}</h2>
 
 <p>
 </p>
@@ -1015,14 +1068,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/mahasiswa/2" \
+    "http://localhost/api/mahasiswa/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/mahasiswa/2"
+    "http://localhost/api/mahasiswa/1"
 );
 
 const headers = {
@@ -1107,10 +1160,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="POSTapi-mahasiswa--id-"
-               value="2"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the mahasiswa. Example: <code>2</code></p>
+<p>ID Mahasiswa Example: <code>1</code></p>
             </div>
                     </form>
 
